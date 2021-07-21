@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %} Update {% endblock %}
+
+
+{% block site %}
+
+<div class="card" style="width: 26rem;">
+  <div class="card-body">
+    <h5 class="card-title">Update task</h5>
+    <p class="card-text">
+      <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button class="card-link btn btn-primary" type="submit">Update</button>
+        <a href="{% url 'list' %}" class="card-link btn btn-primary">Back</a>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
