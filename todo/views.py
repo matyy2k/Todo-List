@@ -62,12 +62,11 @@ def allContent(request):
     return render(request, 'todo.html', context)
 
 
-
 @login_required(login_url='login')
 def updateTasks(request, pk):
     task = Content.objects.get(id=pk)
 
-    form = TasksForm(request.POST or None, instance=task)
+    form = TasksFormUpdate(request.POST or None, instance=task)
     if request.method == 'POST':
         if form.is_valid():
             form.save()
