@@ -1,10 +1,9 @@
-from django.urls import path, include
+from django.urls import path
 from . import views
-from .views import *
 
 urlpatterns = [
-    path('list/', allContent, name='list'),
-    path('update/<str:pk>/', updateTasks, name='update'),
-    path('delete/<str:pk>/', deleteTasks, name='delete'),
+    path('', views.allContent, name='list'),
+    path('update/<str:pk>/', views.updateTasks, name='update'),
+    path('delete/<str:pk>/', views.deleteTasks, name='delete'),
 
 ]
