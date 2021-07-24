@@ -1,17 +1,33 @@
-# Todo-List
+# Todo-List 
+## Table of Contents
+
+* General info
+* Technologies
+* How to run
+
+
+### ~~ General info ~~
 My first self-written app. This is a simple todo list. 
 Includes CRUD - allows you to create, modify and delete tasks.
 CSS is based on the Bootstrap toolkit
 
 
-How to run app:
-1) Add 'todo' in settings.py
+### ~~ Technologies ~~
+- Python 3.9.5
+- Django 3.2.5
+
+
+###	~~  How to run ~~
+Change your settings.py  
+1) 
+```
 INSTALLED_APPS = [
     ...
     'todo',
 ]
-
-2) Add in settings.py
+```
+2)
+```
 TEMPLATES = [
     {
         ...
@@ -19,10 +35,12 @@ TEMPLATES = [
         'APP_DIRS': True,
         ...
 
-
-3) Add in settings:
+```
+3)
+```
 STATIC_URL = '/static/'
 STATICFILES_DIRS = ['myStatic']
+```
 
 
 
