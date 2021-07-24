@@ -49,15 +49,19 @@ def logoutUser(request):
 
 @login_required(login_url='login')
 def allContent(request):
-    all = Content.objects.all()
+    all = Content.objects.filter(user=request.user)
+
 
     form = TasksForm(request.POST or None)
     if request.method == 'POST':
         if form.is_valid():
+            form = form.save(commit=False)
+            form.user = request.user
             form.save()
             return redirect('list')
     context = {'tasks': all, 'form': form}
     return render(request, 'todo.html', context)
+
 
 
 @login_required(login_url='login')
