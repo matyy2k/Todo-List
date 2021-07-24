@@ -8,7 +8,7 @@ from django import forms
 class TasksForm(ModelForm):
     class Meta:
         model = Content
-        fields = ['title', 'complete']
+        fields = ['title', 'complete', 'user']
 
 
 class CreateUserForm(UserCreationForm):

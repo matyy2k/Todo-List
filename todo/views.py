@@ -51,7 +51,6 @@ def logoutUser(request):
 def allContent(request):
     all = Content.objects.filter(user=request.user)
 
-
     form = TasksForm(request.POST or None)
     if request.method == 'POST':
         if form.is_valid():
