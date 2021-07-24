@@ -6,18 +6,19 @@
 * How to run
 
 
-### ~~ General info ~~
+## General info
 My first self-written app. This is a simple todo list. 
-Includes CRUD - allows you to create, modify and delete tasks.
-CSS is based on the Bootstrap toolkit
+Includes CRUD - allows you to create, modify and delete tasks.  
+A login and registration system has been introduced, and each user has an individual list of tasks.
+CSS is based on the Bootstrap toolkit.
 
 
-### ~~ Technologies ~~
+## Technologies
 - Python 3.9.5
 - Django 3.2.5
 
 
-###	~~  How to run ~~
+## How to run
 Change your settings.py  
 1) 
 ```
