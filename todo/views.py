@@ -51,6 +51,9 @@ def logoutUser(request):
 def allContent(request):
     all = Content.objects.filter(user=request.user)
     countUncomplete = Content.objects.filter(user=request.user, complete=False).count()
+    searchBar = request.GET.get('search-bar') or ''
+    if searchBar:
+        all = Content.objects.filter(user=request.user, title__icontains = searchBar)
 
     form = TasksForm(request.POST or None)
     if request.method == 'POST':
@@ -59,7 +62,7 @@ def allContent(request):
             form.user = request.user
             form.save()
             return redirect('list')
-    context = {'tasks': all, 'form': form, 'countUncomplete': countUncomplete}
+    context = {'tasks': all, 'form': form, 'countUncomplete': countUncomplete, 'searchBar': searchBar}
     return render(request, 'todo.html', context)
 
 

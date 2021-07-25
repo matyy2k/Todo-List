@@ -42,7 +42,13 @@
    <div class="card-body">
       <h5 class="card-title">Tasks</h5>
       <h6 class="card-title">You have {{countUncomplete}} incomplete tasks</h6>
-      {% for task in tasks %}
+      <form method="get">
+          <input type="text" placeholder="Type..." name="search-bar" value="{{searchBar}}">
+          <input type="submit" class="button" value="Search">
+      </form>
+
+
+       {% for task in tasks %}
       <div class="card" style="width: 18rem;">
          <ul class="list-group list-group-flush">
             <li class="list-group-item">
