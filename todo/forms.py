@@ -7,14 +7,13 @@ from django.contrib.auth.models import User
 class TasksForm(ModelForm):
     class Meta:
         model = Content
-        fields = ['title',]
+        fields = ['title']
 
 
 class TasksFormUpdate(ModelForm):
     class Meta:
         model = Content
         fields = ['title', 'complete', 'user']
-
 
 
 class CreateUserForm(UserCreationForm):
