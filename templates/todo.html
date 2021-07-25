@@ -27,12 +27,12 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Dodaj zadanie</h1>
+    <h1 class="display-4">Add task</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.title }}
         {{ form.errors }}
-        <button class="btn btn-dark" type="submit">Dodaj</button>
+        <button class="btn btn-dark" type="submit">Submit</button>
     </form>
     </p>
   </div>
@@ -40,7 +40,8 @@
 
 <div class="card" style="width: 30rem;">
    <div class="card-body">
-      <h5 class="card-title">Zadania</h5>
+      <h5 class="card-title">Tasks</h5>
+      <h6 class="card-title">You have {{countUncomplete}} incomplete tasks</h6>
       {% for task in tasks %}
       <div class="card" style="width: 18rem;">
          <ul class="list-group list-group-flush">

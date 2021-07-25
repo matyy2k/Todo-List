@@ -50,6 +50,7 @@ def logoutUser(request):
 @login_required(login_url='login')
 def allContent(request):
     all = Content.objects.filter(user=request.user)
+    countUncomplete = Content.objects.filter(user=request.user, complete=False).count()
 
     form = TasksForm(request.POST or None)
     if request.method == 'POST':
@@ -58,7 +59,7 @@ def allContent(request):
             form.user = request.user
             form.save()
             return redirect('list')
-    context = {'tasks': all, 'form': form}
+    context = {'tasks': all, 'form': form, 'countUncomplete': countUncomplete}
     return render(request, 'todo.html', context)
 
 
