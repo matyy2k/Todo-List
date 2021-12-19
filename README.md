@@ -43,5 +43,12 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = ['myStatic']
 ```
 
+4)
+
+```
+pip install -r requirements.txt
+
+
+```
 
 
