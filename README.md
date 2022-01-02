@@ -40,7 +40,7 @@ TEMPLATES = [
 3)
 ```
 STATIC_URL = '/static/'
-STATICFILES_DIRS = ['myStatic']
+STATICFILES_DIRS = ['my_static']
 ```
 
 4)

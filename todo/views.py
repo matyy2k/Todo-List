@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 
 
 
-def registerPage(request):
+def register_page(request):
     if request.user.is_authenticated:
         return redirect('list')
     else:
@@ -24,7 +24,7 @@ def registerPage(request):
         return render(request, 'register.html', context)
 
 
-def loginPage(request):
+def login_page(request):
     if request.user.is_authenticated:
         return redirect('list')
     else:
@@ -42,13 +42,13 @@ def loginPage(request):
         return render(request, 'login.html', context)
 
 
-def logoutUser(request):
+def logout_user(request):
     logout(request)
     return redirect('login')
 
 
 @login_required(login_url='login')
-def allContent(request):
+def all_content(request):
     all = Content.objects.filter(user=request.user)
     countUncomplete = Content.objects.filter(user=request.user, complete=False).count()
     searchBar = request.GET.get('search-bar') or ''
@@ -67,7 +67,7 @@ def allContent(request):
 
 
 @login_required(login_url='login')
-def updateTasks(request, pk):
+def update_tasks(request, pk):
     task = Content.objects.get(id=pk)
 
     form = TasksFormUpdate(request.POST or None, instance=task)
@@ -80,7 +80,7 @@ def updateTasks(request, pk):
     return render(request, 'update.html', context)
 
 @login_required(login_url='login')
-def deleteTasks(request, pk):
+def delete_tasks(request, pk):
     task = Content.objects.get(id=pk)
 
     if request.method == 'POST':
