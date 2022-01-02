@@ -35,7 +35,6 @@ TEMPLATES = [
         'DIRS': ['templates'],
         'APP_DIRS': True,
         ...
-
 ```
 3)
 ```
@@ -47,8 +46,13 @@ STATICFILES_DIRS = ['my_static']
 
 ```
 pip install -r requirements.txt
-
-
 ```
+
+5) U can create new user or login to admin
+```
+Login: admin
+Password: admin
+```
+
 
 
