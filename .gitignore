@@ -9,4 +9,3 @@ media
 *.env
 *.venv
 *.pyc
-settings.py
