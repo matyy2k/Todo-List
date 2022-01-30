@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['todo-list-djangoapp.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['todo-list-djangoapp.herokuapp.com', '127.0.0.1', '0.0.0.0']
 
 
 # Application definition
@@ -136,7 +136,7 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'my_static')
 
-STATICFILES_DIRS = ['my_static']
+# STATICFILES_DIRS = ['my_static']
 
 
 # Default primary key field type
