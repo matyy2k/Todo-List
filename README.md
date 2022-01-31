@@ -25,8 +25,8 @@ https://todo-list-djangoapp.herokuapp.com/
 
 Log in to default user:
 
-login: admin  
-password: admin
+login: User  
+password: Usertest1
 
 or create new user...
 
