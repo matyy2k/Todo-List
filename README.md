@@ -15,44 +15,35 @@ CSS is based on the Bootstrap toolkit.
 
 ## Technologies
 - Python 3.9.5
-- Django 3.2.5
+- Django 4.0
 
 
 ## How to run
-Change your settings.py  
-1) 
+
+* You can open the website online:
+https://todo-list-djangoapp.herokuapp.com/login/?next=/
+
+Log in to default user:
+
+login: admin  
+password: admin
+
+or create new user...
+
+* You can create applications locally on your computer:
+
+1) git clone https://github.com/matyy2k/Todo-List.git
+2) pip install -r requirements-dev.txt
+3) create .env file in project
+4) add in .env 
 ```
-INSTALLED_APPS = [
-    ...
-    'todo',
-]
-```
-2)
-```
-TEMPLATES = [
-    {
-        ...
-        'DIRS': ['templates'],
-        'APP_DIRS': True,
-        ...
-```
-3)
-```
-STATIC_URL = '/static/'
-STATICFILES_DIRS = ['my_static']
+SECRET_KEY='your secret key'
+DEBUG=False/True
 ```
 
-4)
 
-```
-pip install -r requirements.txt
-```
 
-5) U can create new user or login to admin
-```
-Login: admin
-Password: admin
-```
+
 
 
 
