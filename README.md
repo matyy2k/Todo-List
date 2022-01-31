@@ -21,7 +21,7 @@ CSS is based on the Bootstrap toolkit.
 ## How to run
 
 * You can open the website online:
-https://todo-list-djangoapp.herokuapp.com/login/?next=/
+https://todo-list-djangoapp.herokuapp.com/
 
 Log in to default user:
 
