@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os.path
+import sys
 from pathlib import Path
 from decouple import config
 from dj_database_url import parse as dburl
@@ -84,18 +85,25 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 #     }
 # }
 
-default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd29ljjgt0jehb4',
-        'HOST': 'ec2-54-208-139-247.compute-1.amazonaws.com',
-        'PORT':  5432,
-        'USER': 'msvmdztejjniyq',
-        'PASSWORD': '119661b07cc4ddcffc0a7011c6ad13b0346c34fee78d6b7e6f52fbffaed7afd7'
-
+if 'test' not in sys.argv:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'd29ljjgt0jehb4',
+            'HOST': 'ec2-54-208-139-247.compute-1.amazonaws.com',
+            'PORT':  5432,
+            'USER': 'msvmdztejjniyq',
+            'PASSWORD': '119661b07cc4ddcffc0a7011c6ad13b0346c34fee78d6b7e6f52fbffaed7afd7',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 

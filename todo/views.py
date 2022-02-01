@@ -7,7 +7,6 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
 
-
 def register_page(request):
     if request.user.is_authenticated:
         return redirect('list')
