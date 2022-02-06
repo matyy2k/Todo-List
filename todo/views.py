@@ -48,11 +48,12 @@ def logout_user(request):
 
 @login_required(login_url='login')
 def all_content(request):
-    all = Content.objects.filter(user=request.user)
-    countUncomplete = Content.objects.filter(user=request.user, complete=False).count()
-    searchBar = request.GET.get('search-bar') or ''
-    if searchBar:
-        all = Content.objects.filter(user=request.user, title__icontains = searchBar)
+    if request.method == 'GET':
+        all = Content.objects.filter(user=request.user)
+        countUncomplete = Content.objects.filter(user=request.user, complete=False).count()
+        searchBar = request.GET.get('search-bar') or ''
+        if searchBar:
+            all = Content.objects.filter(user=request.user, title__icontains = searchBar)
 
     form = TasksForm(request.POST or None)
     if request.method == 'POST':
