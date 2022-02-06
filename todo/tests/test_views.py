@@ -18,3 +18,4 @@ class TestViews(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'todo.html')
+        # self.assertEqual()
