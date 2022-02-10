@@ -5,6 +5,19 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from rest_framework import viewsets
+from django.contrib.auth.models import User
+from .serializers import UserSerializer, ContentSerializer
+
+
+class UserView(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class TodoView(viewsets.ModelViewSet):
+    queryset = Content.objects.all()
+    serializer_class = ContentSerializer
 
 
 def register_page(request):
@@ -78,6 +91,7 @@ def update_tasks(request, pk):
 
     context = {'form': form}
     return render(request, 'update.html', context)
+
 
 @login_required(login_url='login')
 def delete_tasks(request, pk):
