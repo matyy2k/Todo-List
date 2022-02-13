@@ -10,7 +10,9 @@
 My first self-written app. This is a simple todo list. 
 Includes CRUD - allows you to create, modify and delete tasks.  
 A login and registration system has been introduced, and each user has an individual list of tasks.  
-CSS is based on the Bootstrap toolkit.
+CSS is based on the Bootstrap toolkit.  
+Simple API is also available. There you can see a list of tasks for all users.  
+The user list is only available to the administrator.
 
 
 ## Technologies
@@ -34,13 +36,8 @@ or create new user...
 
 1) git clone https://github.com/matyy2k/Todo-List.git
 2) pip install -r requirements-dev.txt
-3) create .env file in project
-4) add in .env 
-```
-SECRET_KEY='your secret key'
-DEBUG=False/True
-```
-
+3) python manage.py migrate
+4) python manage.py runserver
 
 
 
