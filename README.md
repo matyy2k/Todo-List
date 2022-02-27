@@ -7,7 +7,7 @@
 
 
 ## General info
-My first self-written app. This is a simple todo list. 
+This is a simple todo list. 
 Includes CRUD - allows you to create, modify and delete tasks.  
 A login and registration system has been introduced, and each user has an individual list of tasks.  
 CSS is based on the Bootstrap toolkit.  
